@@ -83,7 +83,9 @@ public struct CoachMark {
             return
         }
 
-        if (cutoutPath.bounds.origin.y + cutoutPath.bounds.height) > (frame.size.height - 300) {
+        let top = cutoutPath.bounds.origin.y
+        let bottom = frame.size.height - cutoutPath.bounds.origin.y - cutoutPath.bounds.height
+        if top > bottom {
             self.arrowOrientation = .bottom
         } else {
             self.arrowOrientation = .top
